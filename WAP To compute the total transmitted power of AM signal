@@ -1,0 +1,16 @@
+clc;
+clear all;
+m=input('Enter the value of modulation index (m) = ');
+Am=input('Enter the amplitude of modulating signal -'); 
+fa=input('Enter the frequency of modulating signal -'); 
+Ta=1/fa; 
+t=0:Ta/999:6*Ta; 
+ym=Am*sin(2*pi*fa*t); 
+
+Ac=Am/m;
+fc=fa*10;
+Tc=1/fc;
+yc=Ac*sin(2*pi*fc*t);
+pc=(Ac*Ac)/2;
+y=Ac*(1+m*sin(2*pi*fa*t)).*sin(2*pi*fc*t);
+pt=pc*(1+(m*m)/2)
