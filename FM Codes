@@ -1,0 +1,72 @@
+FM CODES 
+//WAP To execute the FM Expression 
+clc; 
+clear all; 
+close all; 
+Ac=input("Carrier signal Amplitude "); 
+Am=input("Message signal Amplitude ");
+Fc=input("carrier Frequency ");
+Fm=input("message Frequency "); 
+kf=input("frequency sensitivity "); 
+
+delf=kf*Am; 
+beta=delf/Fm; 
+ 
+t=linspace(0,5,Fm); 
+cs=Ac*cos(2*pi*Fc*t); 
+ms=Am*cos(2*pi*Fm*t); 
+fms=Ac*cos((2*pi*Fc*t)+(beta*sin(2*pi*Fm*t)));
+ 
+subplot(4,1,1) 
+plot(t,ms) 
+xlabel("time");
+ylabel("amplitude"); 
+title("Message signal"); 
+subplot(4,1,2) 
+plot(t,cs) 
+xlabel("time");
+ylabel("amplitude"); 
+title("Carrier signal"); 
+subplot(4,1,3) 
+plot(t,fms) 
+xlabel("time");
+ylabel("amplitude");
+title("FM signal"); 
+--------------------------------------------------------------------------------------------------------------------------------------
+//WAP to Determine the power of different freq components of the FM signal and compute the power 
+clear all 
+u= 2.5; %beta value
+Po=20; %output power
+J0= -0.05; J1= 0.50;
+J2= 0.45; J3= 0.22;
+J4= 0.07; J5= 0.02;
+J6= 0.01;
+P0= (J0*J0)*Po;
+P0
+P1= (J1*J1)*Po;
+P1
+P2= (J2*J2)*Po;
+P2
+P3= (J3*J3)*Po;
+P3
+P4= (J4*J4)*Po;
+P4
+P5= (J5*J5)*Po;
+P5
+P6= (J6*J6)*Po;
+P6
+Pt= P0+ 2*P1+2*P2+2*P3+2*P4+2*P5+2*P6;
+Pt
+---------------------------------------------------------------------------------------------------------------------------------------
+//WAP to find the bandwidth of FM signal 
+clc;
+clear all;
+close all;
+Ac=input("Carrier signal Amplitude :");
+Am=input("Message signal Amplitude :");
+Fc=input("carrier Frequency  :");
+Fm=input("message Frequency : ");
+beta=input("modulation index : ");
+delf=beta*Fm;
+bandwidth=2*(delf+Fm);
+bandwidth
